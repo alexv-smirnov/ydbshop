@@ -1,0 +1,227 @@
+{
+    "databases": [
+        {
+            "name":"slydb",
+            "caption":"Serverless YDB production 3DC",
+            "type":"ydb",
+            "protocol":"grpcs",
+            "host":"ydb.serverless.yandexcloud.net",
+            "port":2135,
+            "dbname":"/ru-central1/b1g8skpblkos03malf3s/etn02of40siii4urg099",
+            "sa_key_file":"~/secrets/sa_key_prod.json"
+        },
+        {
+            "name":"slyprep",
+            "caption":"Serverless YDB pre-production 3DC",
+            "type":"ydb",
+            "ipv6":"1",
+            "protocol":"grpcs",
+            "host":"ydb.serverless.cloud-preprod.yandex.net",
+            "port":2135,
+            "dbname":"/pre-prod_ydb_public/aoekip3fcgi7ve2sq3ta/cc800v371p3cbi8tkoe4",
+            "sa_key_file":"~/secrets/sa_key_preprod.json",
+            "root_cert":"~/secrets/YandexInternalRootCA.crt",
+            "iam_endpoint":"iam.api.cloud-preprod.yandex.net"
+        },
+        {
+            "name":"plimprep3",
+            "caption":"Serverless YDB preprod ydb730 at plimouthrock@yandex.ru Yandex.Passport account",
+            "type":"ydb",
+            "ipv6":"1",
+            "protocol":"grpcs",
+            "host":"ydb.serverless.cloud-preprod.yandex.net",
+            "port":2135,
+            "dbname":"/pre-prod_ydb_public/aoecpddu0535g0k1ousq/cc8hq3cfj45tq11sfjcv",
+            "sa_key_file":"~/secrets/sa_plimprep.json",
+            "root_cert":"~/secrets/YandexInternalRootCA.crt",
+            "iam_endpoint":"iam.api.cloud-preprod.yandex.net"
+        },
+        {
+            "name":"slyprep2",
+            "caption":"Serverless YDB pre-production 3DC @ yc-ydbaas cloud",
+            "type":"ydb",
+            "ipv6":"1",
+            "protocol":"grpcs",
+            "host":"ydb.serverless.cloud-preprod.yandex.net",
+            "port":2135,
+            "dbname":"/pre-prod_ydb_public/aoedo0ji1lgce9l91har/cc801emfkv21v08k6q53",
+            "sa_key_file":"~/secrets/sa_key_preprod2.json",
+            "root_cert":"~/secrets/YandexInternalRootCA.crt",
+            "iam_endpoint":"iam.api.cloud-preprod.yandex.net"
+        },
+        {
+            "name":"ydbd1",
+            "caption":"Dedicated YDB 3 nodes",
+            "type":"ydb",
+            "protocol":"grpcs",
+            "host":"lb.etn01q5ko6sh271beftr.ydb.mdb.yandexcloud.net",
+            "port":2135,
+            "dbname":"/ru-central1/b1g8skpblkos03malf3s/etn01q5ko6sh271beftr",
+            "sa_key_file":"~/secrets/sa_key_prod.json",
+            "root_cert":"~/secrets/ydb_dedicated_root_certificate.pem"
+        },
+        {
+            "name":"spu1",
+            "caption":"Sergey Puchin 1",
+            "type":"ydb",
+            "protocol":"grpc",
+            "host":"kikimr0395.search.yandex.net",
+            "port":2135,
+            "ipv6":"1",
+            "dbname":"/ydbdev/spuchin",
+            "sql_prefix":"PRAGMA kikimr.UseNewEngine = \"true\";\n"
+        },
+        {
+            "name":"snaury1",
+            "caption":"Snaury 1: kikimr0390 /man_slice_04/db1",
+            "type":"ydb",
+            "protocol":"grpc",
+            "host":"kikimr0390.search.yandex.net",
+            "port":2135,
+            "ipv6":"1",
+            "dbname":"/man_slice_04/db1"
+        },
+        {
+            "name":"pg2cpu",
+            "caption":"PostgreSQL 2CPU 2DC sync",
+            "type":"pg",
+            "host":"rc1c-bdglza9du6xyvhvz.mdb.yandexcloud.net",
+            "port":6432,
+            "dbname":"db_p3",
+            "user":"user1"
+        },
+        {
+            "name":"pg4cpu",
+            "caption":"PostgreSQL 4CPU 2DC sync",
+            "type":"pg",
+            "host":"rc1c-7xu31dascvrbptnl.mdb.yandexcloud.net",
+            "port":6432,
+            "dbname":"db_p3",
+            "user":"user1"
+        },
+        {
+            "name":"crdbf",
+            "caption":"CockroachDB Cloud free",
+            "type":"pg",
+            "host":"free-tier7.aws-eu-west-1.cockroachlabs.cloud",
+            "port":26257,
+            "dbname":"minor-jackal-181.defaultdb",
+            "user":"alexander",
+            "password_var":"CRDBF_PWD",
+            "root_cert":"~/secrets/cockroach/cloud_free_root.crt"
+        },
+        {
+            "name":"crdbsn",
+            "caption":"CockroachDB single-node",
+            "type":"pg",
+            "host":"a2x8",
+            "hostaddr":"178.154.224.47",
+            "port":26257,
+            "dbname":"defaultdb",
+            "root_cert":"~/secrets/cockroach/crdbsn/cockroachca1.crt",
+            "user":"root",
+            "client_cert":"~/secrets/cockroach/crdbsn/client.root.crt",
+            "client_key":"~/secrets/cockroach/crdbsn/client.root.key",
+            "cockroach":true
+        },
+        {
+            "name":"crdbsn2",
+            "caption":"CockroachDB single-node Non-replicated disk",
+            "type":"pg",
+            "host":"a2x8nrd",
+            "hostaddr":"178.154.241.9",
+            "port":26257,
+            "dbname":"defaultdb",
+            "root_cert":"~/secrets/cockroach/crdbsn2/ca.crt",
+            "user":"root",
+            "client_cert":"~/secrets/cockroach/crdbsn2/client.root.crt",
+            "client_key":"~/secrets/cockroach/crdbsn2/client.root.key",
+            "cockroach":true
+        },
+        {
+            "name":"crdb3n",
+            "caption":"CockroachDB 3-nodes AZ-A NRD",
+            "type":"pg",
+            "host":"a2x8n1",
+            "hostaddr":"178.154.225.108",
+            "port":26257,
+            "dbname":"defaultdb",
+            "root_cert":"~/secrets/cockroach/crdb3n/ca.crt",
+            "user":"root",
+            "client_cert":"~/secrets/cockroach/crdb3n/client.root.crt",
+            "client_key":"~/secrets/cockroach/crdb3n/client.root.key",
+            "cockroach":true
+        },
+        {
+            "name":"crdbmz",
+            "caption":"CockroachDB 3-nodes 2CPU*8GB NRD Multi-Zone",
+            "type":"pg",
+            "host":"m2x8n1a",
+            "hostaddr":"178.154.252.52",
+            "port":26257,
+            "dbname":"defaultdb",
+            "root_cert":"~/secrets/cockroach/crdbmz/ca.crt",
+            "user":"root",
+            "client_cert":"~/secrets/cockroach/crdbmz/client.root.crt",
+            "client_key":"~/secrets/cockroach/crdbmz/client.root.key",
+            "cockroach":true
+        },
+        {
+            "name":"crdbmz8a",
+            "caption":"CockroachDB 3-nodes 8CPU*32GB NRD Multi-Zone Node A",
+            "type":"pg",
+            "host":"m8x32n1a",
+            "hostaddr":"178.154.252.127",
+            "port":26257,
+            "dbname":"defaultdb",
+            "root_cert":"~/secrets/cockroach/crdbmz8/ca.crt",
+            "user":"root",
+            "client_cert":"~/secrets/cockroach/crdbmz8/client_a.root.crt",
+            "client_key":"~/secrets/cockroach/crdbmz8/client_a.root.key",
+            "cockroach":true
+        },
+        {
+            "name":"crdbmz8b",
+            "caption":"CockroachDB 3-nodes 8CPU*32GB NRD Multi-Zone Node B",
+            "type":"pg",
+            "host":"m8x32n2b",
+            "hostaddr":"178.154.194.168",
+            "port":26257,
+            "dbname":"defaultdb",
+            "root_cert":"~/secrets/cockroach/crdbmz8/ca.crt",
+            "user":"root",
+            "client_cert":"~/secrets/cockroach/crdbmz8/client_b.root.crt",
+            "client_key":"~/secrets/cockroach/crdbmz8/client_b.root.key",
+            "cockroach":true
+        },
+        {
+            "name":"crdbmz8c",
+            "caption":"CockroachDB 3-nodes 8CPU*32GB NRD Multi-Zone Node C",
+            "type":"pg",
+            "host":"m8x32n3c",
+            "hostaddr":"84.252.132.249",
+            "port":26257,
+            "dbname":"defaultdb",
+            "root_cert":"~/secrets/cockroach/crdbmz8/ca.crt",
+            "user":"root",
+            "client_cert":"~/secrets/cockroach/crdbmz8/client_c.root.crt",
+            "client_key":"~/secrets/cockroach/crdbmz8/client_c.root.key",
+            "cockroach":true
+        },
+        {
+            "name":"crcl3",
+            "caption":"CockroachDB 3-nodes 8CPU*32GB Cockroach Cloud",
+            "type":"pg",
+            "host":"milky-rat-8xc.gcp-europe-west4.cockroachlabs.cloud",
+            "port":26257,
+            "dbname":"defaultdb",
+            "root_cert":"~/secrets/cockroach/crcl3/milky-rat-ca.crt",
+            "user":"alexv",
+            "password_var":"CRDBF_PWD",
+            "cockroach":true
+        }
+
+        
+    ]
+
+}
