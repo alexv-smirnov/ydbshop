@@ -9,7 +9,7 @@ maxthreads = 60
 def testorder():
     testorder = [{"product":"p"+str(pr),"quantity":2} for (pr) in range(1000)]
     ds = datetime.datetime.now()
-    submitOrder( "Name0", testorder )
+    # submitOrder( "Name0", testorder )
     df = datetime.datetime.now()
     print('Order created for ', df - ds )    
 
