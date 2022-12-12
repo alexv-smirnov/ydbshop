@@ -11,7 +11,7 @@ import json
 from os.path import expanduser
 import timer
 from timer import MyTimer
-import profile
+import ydb_profile
 
 # MongoDB
 # mongoURL = 'mongodb://user1:' + pg_pwd + '@rc1c-p4l3hxws8tjmvsrq.mdb.yandexcloud.net:27018'
@@ -42,7 +42,7 @@ def ping( host, port, ipv6 ):
     print( 'Ping ' + fs + ' ' + host+' :',port,': ', round((time.time() - ts)*1000), 'ms' )
 
 def connect_ydb( profileName ):
-    x = profile.getDriverParsFromProfile( profileName )
+    x = ydb_profile.getDriverParsFromProfile( profileName )
     global ydb_database
     ydb_database = x['database']
     with MyTimer('Driver get'):
