@@ -21,3 +21,4 @@ jobs:
           ls
         # stop script after first failure
         script_stop: true
+        debug: true
