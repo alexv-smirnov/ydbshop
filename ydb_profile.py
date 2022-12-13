@@ -14,6 +14,7 @@ def read_string(f):
 
 def getDriverPars( profileName, d ):
     res = {}
+    
     if not profileName is None:
         p = d['profiles'][profileName]
         if 'endpoint' in p:
