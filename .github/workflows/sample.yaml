@@ -9,3 +9,15 @@ jobs:
         SUPER_SECRET: ${{ secrets.Secret1 }}
       run: |
         echo "$SUPER_SECRET"
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        # ssh host
+        host: ${{ secrets.host }}
+        # content of ssh private key. ex raw content of ~/.ssh/id_rsa
+        key: ${{ secrets.key }}
+        # execute commands
+        script:
+          ls
+        # stop script after first failure
+        script_stop: true
