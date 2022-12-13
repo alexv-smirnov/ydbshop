@@ -1,0 +1,6 @@
+steps:
+  - shell: bash
+    env:
+      SUPER_SECRET: ${{ secrets.Secret1 }}
+    run: |
+      echo "$SUPER_SECRET"
