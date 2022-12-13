@@ -17,8 +17,7 @@ jobs:
         # content of ssh private key. ex raw content of ~/.ssh/id_rsa
         key: ${{ secrets.key }}
         # execute commands
-        script:
-          ls
+        script: ls
         # stop script after first failure
         script_stop: true
         debug: true
